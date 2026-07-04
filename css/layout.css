@@ -1,0 +1,90 @@
+#app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+}
+#sidebar {
+  background: var(--bg-surface-1);
+  border-left: 1px solid var(--border);
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+#sidebar .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 10px 18px;
+  color: var(--accent);
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  cursor: pointer;
+  user-select: none;
+}
+.nav-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.nav-item.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+.nav-item .badge {
+  margin-right: auto;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+#main-area { display: flex; flex-direction: column; min-width: 0; }
+#topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-5);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface-1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+#global-search {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+#timer-widget {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+#timer-widget.running { color: var(--accent); border-color: var(--accent); }
+#view-container { padding: var(--space-5); flex: 1; }
+.top-spacer { flex: 1; }
+@media (max-width: 860px) {
+  #app-shell { grid-template-columns: 1fr; }
+  #sidebar { display: none; position: fixed; z-index: 40; width: 220px; box-shadow: var(--shadow-md); }
+  #sidebar.open { display: flex; }
+  #view-container { padding: var(--space-3); }
+}
