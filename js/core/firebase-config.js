@@ -1,12 +1,14 @@
 // استبدل القيم التالية بإعدادات مشروعك على Firebase Console
 // Project Settings > General > Your apps > SDK setup and configuration
-export const firebaseConfig = {
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyBTpvluZ2Yq6-o_8lqT6RuK-wEYAj3ewkc",
   authDomain: "seo-tool-493120.firebaseapp.com",
   projectId: "seo-tool-493120",
   storageBucket: "seo-tool-493120.firebasestorage.app",
   messagingSenderId: "375171116080",
-  appId: "1:375171116080:web:4a7af07c6637ca63df91f5"
+  appId: "1:375171116080:web:4a7af07c6637ca63df91f5",
+  measurementId: "G-CL5MZ47GHN"
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
